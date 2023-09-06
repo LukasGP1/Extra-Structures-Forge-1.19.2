@@ -1,6 +1,7 @@
 package de.lukasgp.extra_structures;
 
 import com.mojang.logging.LogUtils;
+import de.lukasgp.extra_structures.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +20,8 @@ public class ExtraStructures {
 
     public ExtraStructures() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
